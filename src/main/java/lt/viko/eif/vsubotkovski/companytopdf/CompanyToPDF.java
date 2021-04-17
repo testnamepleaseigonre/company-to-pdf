@@ -21,11 +21,17 @@ import org.apache.fop.apps.FopFactory;
 import org.apache.xmlgraphics.util.MimeConstants;
 
 /**
- *
+ * Class which is dedicated to transform XML file to PDF.
+ * 
  * @author valde
  */
 public class CompanyToPDF {
 
+    /**
+     * Main method which runs convertToPDF() method.
+     * 
+     * @param args 
+     */
     public static void main(String[] args) {
         try {
             convertToPDF();
@@ -33,7 +39,14 @@ public class CompanyToPDF {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Method dedicated to transform XML file to PDF.
+     * 
+     * @throws TransformerException
+     * @throws IOException
+     * @throws FOPException 
+     */
     public static void convertToPDF() throws TransformerException, IOException, FOPException {
         File xsltFile = new File("company-topdf.xsl");
         StreamSource xmlSource = new StreamSource(new File("company.xml"));
